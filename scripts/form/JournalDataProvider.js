@@ -1,5 +1,11 @@
 let journal = []
 
+const eventHub = document.querySelector("main")
+
+const dispatchStateChangeEvent = () => {
+    eventHub.dispatchEvent(new CustomEvent("journalStateChanged"))
+}
+
 export const useJournalEntries = () => {
     const sortedByDate = journal.sort(
         (currentEntry, nextEntry) =>
@@ -14,4 +20,16 @@ export const getJournalEntries = () => {
         .then(entries => {
             journal = entries
         })
+}
+
+export const saveJournalEntry = entryObj => {
+    fetch("http://localhost:8088/entries", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(entryObj)
+    })
+        .then(getJournalEntries)  // <-- Get all journal entries
+        .then(dispatchStateChangeEvent)  // <-- Broadcast the state change event
 }
