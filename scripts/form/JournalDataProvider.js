@@ -30,6 +30,6 @@ export const saveJournalEntry = entryObj => {
         },
         body: JSON.stringify(entryObj)
     })
-        .then(getJournalEntries)  // <-- Get all journal entries
-        .then(dispatchStateChangeEvent)  // <-- Broadcast the state change event
+        .then(getJournalEntries) 
+        .then(dispatchStateChangeEvent) 
 }

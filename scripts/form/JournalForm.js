@@ -49,6 +49,7 @@ export const JournalFormComponent = () => {
                     <option value="Sad">Sad</option>
                 </select>    
             </fieldset>
-            <input type="submit" value="Record Journal Entry" id="submitEntry">    
-        </form>`
+            <input type="submit" value="Record Journal Entry" id="submitEntry">  
+        </form>
+    `
 }
