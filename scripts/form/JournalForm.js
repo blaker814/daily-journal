@@ -5,15 +5,17 @@ const eventHub = document.querySelector("main")
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "submitEntry") {
         const contentTarget = document.querySelectorAll(".journalEntryInput")
-        const newJournalEntry = {
-            date: contentTarget[0].value,
-            concept: contentTarget[1].value,
-            entry: contentTarget[2].value,
-            mood: contentTarget[3].value
+        if (contentTarget[1].value.length < 20) {
+            const newJournalEntry = {
+                date: contentTarget[0].value,
+                concept: contentTarget[1].value,
+                entry: contentTarget[2].value,
+                mood: contentTarget[3].value
+            }
+            saveJournalEntry(newJournalEntry)
+        } else {
+            alert("Concepts covered field must be less than 20 characters long. Please input again.")
         }
-        
-        saveJournalEntry(newJournalEntry)
-
     }
 })
 
