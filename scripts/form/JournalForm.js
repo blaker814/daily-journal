@@ -5,7 +5,9 @@ const eventHub = document.querySelector("main")
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "submitEntry") {
         const contentTarget = document.querySelectorAll(".journalEntryInput")
-        if (contentTarget[1].value.length < 20) {
+        const entryMood = document.querySelector("#mood")
+
+        if (contentTarget[1].value.length < 20 && entryMood.value !== "0") {
             const newJournalEntry = {
                 date: contentTarget[0].value,
                 concept: contentTarget[1].value,
@@ -13,8 +15,10 @@ eventHub.addEventListener("click", clickEvent => {
                 mood: contentTarget[3].value
             }
             saveJournalEntry(newJournalEntry)
+        } else if (contentTarget[1].value.length >= 20 && entryMood.value !== "0") {
+            alert("Concepts covered field must be less than 20 characters long.")
         } else {
-            alert("Concepts covered field must be less than 20 characters long. Please input again.")
+            alert("Please select a mood for this entry.")
         }
     }
 })
@@ -39,6 +43,7 @@ export const JournalFormComponent = () => {
             <fieldset>
                 <label for="mood">Mood for the day</label>
                 <select id="mood" class="journalEntryInput">
+                    <option value="0">Please select a mood...</option>
                     <option value="Happy">Happy</option>
                     <option value="Ok">Ok</option>
                     <option value="Sad">Sad</option>
