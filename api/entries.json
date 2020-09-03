@@ -22,11 +22,32 @@
       "id": 3
     },
     {
-      "date": "2020-09-17",
-      "concept": "asd",
-      "entry": "asd",
+      "date": "2020-09-02",
+      "concept": "APIs",
+      "entry": "I learned how to create and implement my own local APIs.",
       "mood": "Happy",
       "id": 4
+    },
+    {
+      "date": "2020-09-04",
+      "concept": "POST",
+      "entry": "We learned about the C in the CRUD method",
+      "mood": "Ok",
+      "id": 5
+    },
+    {
+      "date": "2020-09-18",
+      "concept": "sdfg",
+      "entry": "sfgsfg",
+      "mood": "Happy",
+      "id": 6
+    },
+    {
+      "date": "",
+      "concept": "assddfffggsdfsddsfsdfsdfsdfsdfsdfsdf",
+      "entry": "",
+      "mood": "Happy",
+      "id": 7
     }
   ]
 }
