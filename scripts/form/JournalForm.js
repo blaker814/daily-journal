@@ -15,6 +15,7 @@ eventHub.addEventListener("click", clickEvent => {
                 mood: contentTarget[3].value
             }
             saveJournalEntry(newJournalEntry)
+            JournalFormComponent()
         } else if (contentTarget[1].value.length >= 20 && entryMood.value !== "0") {
             alert("Concepts covered field must be less than 20 characters long.")
         } else {
@@ -49,7 +50,7 @@ export const JournalFormComponent = () => {
                     <option value="Sad">Sad</option>
                 </select>    
             </fieldset>
-            <input type="submit" value="Record Journal Entry" id="submitEntry">  
+            <button type="button" id="submitEntry">Record Journal Entry</button> 
         </form>
     `
 }
