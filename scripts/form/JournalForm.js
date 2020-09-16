@@ -35,7 +35,7 @@ eventHub.addEventListener("click", clickEvent => {
 export const JournalFormSelect = () => {
 
     getMoods()
-        .then(() => getInstructors())
+        .then(getInstructors)
         .then(() => {
             const moods = useMoods();
             const instructors = useInstructors();
