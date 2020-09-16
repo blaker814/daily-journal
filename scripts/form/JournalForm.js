@@ -20,7 +20,8 @@ eventHub.addEventListener("click", clickEvent => {
             }
             saveJournalEntry(newJournalEntry)
             const moods = useMoods()
-            JournalFormComponent(moods)
+            const instructors = useInstructors()
+            JournalFormComponent(moods, instructors)
         } else if (contentTarget[1].value.length > 20) {
             alert("Concepts covered field must be less than 20 characters long.")
         } else if (entryMood.value === "0") {

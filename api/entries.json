@@ -39,14 +39,6 @@
       "moodId": 1,
       "instructorId": 1,
       "id": 5
-    },
-    {
-      "date": "2020-09-07",
-      "concept": "PUT",
-      "entry": "Discovered that the PUT method allows for updating objects in your API.",
-      "moodId": 3,
-      "instructorId": 2,
-      "id": 6
     }
   ],
   "moods": [
