@@ -35,5 +35,16 @@
       "mood": "Ok",
       "id": 5
     }
-  ]
+  ],
+  "moods": [
+    {
+      "id": 1,
+      "label": "Ok"
+    },
+    {
+      "id": 2,
+      "label": "Verklempt"
+    }
+  ],
+  "instructors": []
 }
