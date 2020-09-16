@@ -4,36 +4,49 @@
       "date": "2020-08-10",
       "concept": "HTML & CSS",
       "entry": "We talked about HTML components and how to make grid layouts with Flexbox in CSS.",
-      "mood": "Ok",
+      "moodId": 1,
+      "instructorId": 3,
       "id": 1
     },
     {
       "date": "2020-08-12",
       "concept": "GitHub",
       "entry": "We dove into GitHub and learned about it's functionality and work flow.",
-      "mood": "Happy",
+      "moodId": 3,
+      "instructorId": 1,
       "id": 2
     },
     {
       "date": "2020-8-19",
       "concept": "JS Objects",
       "entry": "We learned about JS objects and how to utilize them in creating material for our webpage",
-      "mood": "Happy",
+      "moodId": 3,
+      "instructorId": 1,
       "id": 3
     },
     {
       "date": "2020-09-02",
       "concept": "APIs",
       "entry": "I learned how to create and implement my own local APIs.",
-      "mood": "Happy",
+      "moodId": 3,
+      "instructorId": 2,
       "id": 4
     },
     {
       "date": "2020-09-04",
       "concept": "POST",
       "entry": "We learned about the C in the CRUD method",
-      "mood": "Ok",
+      "moodId": 1,
+      "instructorId": 1,
       "id": 5
+    },
+    {
+      "date": "2020-09-07",
+      "concept": "PUT",
+      "entry": "Discovered that the PUT method allows for updating objects in your API.",
+      "moodId": 3,
+      "instructorId": 2,
+      "id": 6
     }
   ],
   "moods": [
@@ -43,8 +56,32 @@
     },
     {
       "id": 2,
-      "label": "Verklempt"
+      "label": "Ponderous"
+    },
+    {
+      "id": 3,
+      "label": "Happy"
+    },
+    {
+      "id": 4,
+      "label": "Sad"
     }
   ],
-  "instructors": []
+  "instructors": [
+    {
+      "id": 1,
+      "first_name": "Brenda",
+      "last_name": "Long"
+    },
+    {
+      "id": 2,
+      "first_name": "Adam",
+      "last_name": "Sheaffer"
+    },
+    {
+      "id": 3,
+      "first_name": "Sage",
+      "last_name": "Klein"
+    }
+  ]
 }

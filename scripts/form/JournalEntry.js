@@ -4,7 +4,8 @@ export const JournalEntryComponent = (entry) => {
             <h3>${entry.concept}</h3>
                 <p>${entry.date}</p>
                 <p>${entry.entry}</p>
-                <p>This was a ${entry.mood} entry.</p>
+                <p>This was a ${entry.mood.label} entry.</p>
+                <p>${entry.instructor.first_name} ${entry.instructor.last_name} is so helpful!</p>
         </section>
     `
 }
