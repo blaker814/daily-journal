@@ -75,5 +75,31 @@
       "first_name": "Sage",
       "last_name": "Klein"
     }
+  ],
+  "tags": [
+    {
+      "id": 1,
+      "subject": "API"
+    },
+    {
+      "id": 2,
+      "subject": "components"
+    },
+    {
+      "id": 3,
+      "subject": "fetch"
+    }
+  ],
+  "entryTags": [
+    {
+      "id": 1,
+      "entryId": 4,
+      "tagId": 2
+    },
+    {
+      "id": 2,
+      "entryId": 4,
+      "tagId": 3
+    }
   ]
 }

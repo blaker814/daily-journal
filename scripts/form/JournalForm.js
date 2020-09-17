@@ -58,6 +58,10 @@ export const JournalFormComponent = (allMoods, allInstructors) => {
                 <input type="text" name="concepts" id="concepts" class="journalEntryInput">
             </fieldset>
             <fieldset>
+                <label for="tags">Entry tags separated by comma</label>
+                <input type="text" name="tags" id="tags" placeholder="e.g. API,components,providers...">
+            </fieldset>
+            <fieldset>
                 <label for="journalEntry">Journal Entry</label>
                 <textarea class="journalEntryInput"></textarea>
             </fieldset>
