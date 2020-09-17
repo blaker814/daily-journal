@@ -2,6 +2,7 @@ export const MoodFilter = (allMoods) => {
     return `
         <fieldset class="fieldset">
             <legend>Filter Journal Entries by Mood</legend>
+            <div>
             ${
                 allMoods.map(
                     (mood) => {
@@ -11,6 +12,7 @@ export const MoodFilter = (allMoods) => {
                     }
                 ).join("")
             }
+            </div>
         </fieldset>
         `
 }
