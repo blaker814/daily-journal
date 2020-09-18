@@ -1,6 +1,7 @@
-import { saveJournalEntry } from "./JournalDataProvider.js"
+import { saveJournalEntry, useJournalEntries } from "./JournalDataProvider.js"
 import { useMoods, getMoods } from "./MoodProvider.js"
 import { useInstructors, getInstructors } from "./InstructorProvider.js"
+import { findTag, saveTag, saveEntryTag } from "../filter/TagProvider.js"
 
 const eventHub = document.querySelector("main")
 
@@ -11,6 +12,7 @@ eventHub.addEventListener("click", clickEvent => {
         const entryInstructor = document.querySelector("#instructor")
 
         if (contentTarget[1].value.length < 20 && entryMood.value !== "0" && entryInstructor.value !== "0") {
+            
             const newJournalEntry = {
                 date: contentTarget[0].value,
                 concept: contentTarget[1].value,
@@ -19,9 +21,40 @@ eventHub.addEventListener("click", clickEvent => {
                 instructorId: parseInt(contentTarget[4].value)
             }
             saveJournalEntry(newJournalEntry)
+            const entryTags = document.querySelector("#tags")
+            const tags = entryTags.value.split(',')
+            const entries = useJournalEntries()
+            const entry = entries[entries.length - 1]
+            tags.forEach(tag => {
+
+                findTag(tag)  // tag variable will have a string value
+                .then(matches => {  // `matches` variable value will be array of matching objects
+                    let matchingTag = null
+
+                    if (matches.length > 0) {
+                        matchingTag = matches[0].id
+                    }
+
+                    if (matchingTag === null) {
+                        // Tag doesn't exist. Create it then assign it to entry.
+                        const newTag = {
+                            subject: tag
+                        }
+                        saveTag(newTag).then(new_tag => {
+                                saveEntryTag(entry.id, new_tag.id)
+                            })
+                    }
+                    else {
+                        // Tag does exist. Assign it to entry.
+                        saveEntryTag(entry.id, matchingTag)
+                    }
+                })
+            })
             const moods = useMoods()
             const instructors = useInstructors()
             JournalFormComponent(moods, instructors)
+            
+         
         } else if (contentTarget[1].value.length > 20) {
             alert("Concepts covered field must be less than 20 characters long.")
         } else if (entryMood.value === "0") {
