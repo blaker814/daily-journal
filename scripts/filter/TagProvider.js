@@ -1,21 +1,20 @@
-// let tags = []
+import { useJournalEntries } from "../form/JournalDataProvider.js"
 
-// const eventHub = document.querySelector("main")
+let tags = []
+let entry;
 
-// const dispatchStateChangeEvent = () => {
-//     eventHub.dispatchEvent(new CustomEvent("tagStateChanged"))
-// }
+const eventHub = document.querySelector("main")
 
-// export const useTags = () => tags.slice()
+export const useTags = () => tags.slice()
 
 
-// export const getTags = () => {
-//     return fetch("http://localhost:8088/tags")
-//         .then(response => response.json())  
-//         .then(parsedTags => {
-//             tags = parsedTags
-//         })
-// }
+export const getTags = () => {
+    return fetch("http://localhost:8088/tags")
+        .then(response => response.json())  
+        .then(parsedTags => {
+            tags = parsedTags
+        })
+}
 
 export const findTag = (subject) => {
     return fetch(`http://localhost:8088/tags?subject=${subject}`)
@@ -29,11 +28,13 @@ export const saveTag = (tagObj) => {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(tagObj)
-    }).then(response => response.json()).then(parsedTags => {
-        return parsedTags[parsedTags.length-1]
     })
-    // .then(getTags)
-    // .then(dispatchStateChangeEvent)
+    .then(getTags)
+    .then(() => {
+        const allTags = useTags()
+        const new_tag = allTags.find(tag => tag.subject === tagObj.subject)
+        saveEntryTag(entry.id, new_tag.id)
+    })
 }
 
 export const saveEntryTag = (entryId, tagId) => {
@@ -48,5 +49,34 @@ export const saveEntryTag = (entryId, tagId) => {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(newEntryTag)
+    })
+}
+
+export const determineTags = tagArray => {
+    const allEntries = useJournalEntries()
+    entry = allEntries[allEntries.length-1]
+
+    tagArray.forEach(tag => { 
+
+        findTag(tag)  // tag variable will have a string value
+        .then(matches => {  // `matches` variable value will be array of matching objects
+            let matchingTag = null
+
+            if (matches.length > 0) {
+                matchingTag = matches[0].id
+            }
+
+            if (matchingTag === null) {
+                // Tag doesn't exist. Create it then assign it to entry.
+                const newTag = {
+                    subject: tag
+                }
+                saveTag(newTag)
+            }
+            else {
+                // Tag does exist. Assign it to entry.
+                saveEntryTag(entry.id, matchingTag)
+            }
+        })
     })
 }
