@@ -39,6 +39,14 @@
       "moodId": 1,
       "instructorId": 1,
       "id": 5
+    },
+    {
+      "date": "2020-09-17",
+      "concept": "CRUD",
+      "entry": "I have finally learned how to use every method of CRUD.",
+      "moodId": 2,
+      "instructorId": 1,
+      "id": 6
     }
   ],
   "moods": [
@@ -94,39 +102,67 @@
       "id": 4
     },
     {
-      "subject": "nuts",
+      "subject": "GitHub",
       "id": 5
     },
     {
-      "subject": "qwe",
+      "subject": "DELETE",
       "id": 6
+    },
+    {
+      "subject": "POST",
+      "id": 7
+    },
+    {
+      "subject": "GET",
+      "id": 8
     }
   ],
   "entryTags": [
     {
-      "id": 1,
-      "entryId": 4,
-      "tagId": 2
+      "entryId": 1,
+      "tagId": 2,
+      "id": 1
     },
     {
-      "id": 2,
-      "entryId": 4,
-      "tagId": 3
+      "entryId": 2,
+      "tagId": 5,
+      "id": 2
     },
     {
-      "entryId": 5,
-      "tagId": 1,
+      "entryId": 3,
+      "tagId": 3,
       "id": 3
     },
     {
-      "entryId": 5,
+      "entryId": 4,
       "tagId": 5,
       "id": 4
     },
     {
       "entryId": 5,
-      "tagId": 6,
+      "tagId": 4,
       "id": 5
+    },
+    {
+      "entryId": 6,
+      "tagId": 4,
+      "id": 6
+    },
+    {
+      "entryId": 6,
+      "tagId": 6,
+      "id": 7
+    },
+    {
+      "entryId": 6,
+      "tagId": 7,
+      "id": 8
+    },
+    {
+      "entryId": 6,
+      "tagId": 8,
+      "id": 9
     }
   ]
 }

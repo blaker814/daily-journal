@@ -2,6 +2,7 @@ import { useJournalEntries } from "../form/JournalDataProvider.js"
 
 let tags = []
 let entry;
+let entryTags = []
 
 const eventHub = document.querySelector("main")
 
@@ -35,6 +36,16 @@ export const saveTag = (tagObj) => {
         const new_tag = allTags.find(tag => tag.subject === tagObj.subject)
         saveEntryTag(entry.id, new_tag.id)
     })
+}
+
+export const useEntryTags = () => entryTags.slice()
+
+export const getEntryTags = () => {
+    return fetch("http://localhost:8088/entryTags")
+        .then(response => response.json())  
+        .then(parsedEntryTags => {
+            entryTags = parsedEntryTags
+        })
 }
 
 export const saveEntryTag = (entryId, tagId) => {

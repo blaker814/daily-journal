@@ -14,11 +14,16 @@ eventHub.addEventListener("click", clickEvent => {
 })
 
 export const JournalEntryComponent = (entry) => {
+    const tags = entry.tags
     return `
         <section id="entry--${entry.id}" class="journalEntry">
             <h3>${entry.concept}</h3>
                 <p>${entry.date}</p>
                 <p>${entry.entry}</p>
+                <ul>${
+                    tags.map(tag => `<li>${tag.subject}</li>`).join("")
+                }
+                </ul>
                 <p>This was a ${entry.mood.label} entry.</p>
                 <p>${entry.instructor.first_name} ${entry.instructor.last_name} is so helpful!</p>
                 <button type="button" class="deleteBtn" id="deleteBtn-${entry.id}">Delete Entry</button>
