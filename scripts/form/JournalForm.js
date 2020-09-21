@@ -17,6 +17,8 @@ eventHub.addEventListener("click", clickEvent => {
 
         if (contentTarget[1].value.length < 20 && entryMood.value !== "0" && entryInstructor.value !== "0") {
             
+            replaceWords(clickEvent)
+
             const newJournalEntry = {
                 date: contentTarget[0].value,
                 concept: contentTarget[1].value,
@@ -43,6 +45,31 @@ eventHub.addEventListener("click", clickEvent => {
         }
     }
 })
+
+const replaceWords = event => {
+    //Prevent form submission to server 
+    event.preventDefault();
+    const conceptContent = document.getElementById('concepts');
+    const entryContent = document.getElementById('entryForJournal');
+    const censoredConcept = censor(conceptContent.value);
+    const censoredEntry = censor(entryContent.value);
+    conceptContent.value = censoredConcept;
+    entryContent.value =  censoredEntry;
+}
+
+const censor = string => {
+    // "i" is to ignore case and "g" for global "|" for OR match
+    const regex = /crap|ugly|brat|fool|fuck|fucking|f\*cking|f\*ck|bitch|b\*tch|shit|sh\*t|fool|dumb|couch potato|arse|arsehole|asshole|\*ssh\*l\*|\*\*\*\*|c\*ck|\*\*\*\*sucker|c\*cks\*ck\*r|\*\*\*\*|c\*nt|dickhead|d\*c\*h\*a\*|\*\*\*\*|f\*c\*|\*\*\*\*wit|f\*ckw\*t|fuk|f\*k|fuking|f\*k\*ng|mother\*\*\*\*er|m\*th\*rf\*ck\*r|\*\*\*\*\*\*|n\*gg\*r|pussy|p\*ssy|\*\*\*\*|sh\*t|wanker|w\*nk\*r|wankers|w\*nk\*rs|whore|wh\*r\*|slag| sl\*g|\*\*\*\*\*|b\*tch|f u c k|f\*c\*|b.i.t.c.h|b\*tch|d-i-c-k|d\*\*\*/gi;
+    return string.replace(regex, match => {
+        //replace each letter with a star
+        let stars = '';
+        for (let i = 0; i < match.length; i++) {
+            stars += '*';
+        }
+        return stars;
+    });
+
+}
 
 export const JournalFormSelect = () => {
 
@@ -75,7 +102,7 @@ export const JournalFormComponent = (allMoods, allInstructors) => {
             </fieldset>
             <fieldset>
                 <label for="journalEntry">Journal Entry</label>
-                <textarea class="journalEntryInput"></textarea>
+                <textarea id="entryForJournal" class="journalEntryInput"></textarea>
             </fieldset>
             <fieldset>
                 <label for="mood">Mood for the day</label>

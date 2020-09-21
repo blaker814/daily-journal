@@ -116,6 +116,10 @@
     {
       "subject": "GET",
       "id": 8
+    },
+    {
+      "subject": "ERD",
+      "id": 9
     }
   ],
   "entryTags": [
@@ -163,6 +167,31 @@
       "entryId": 6,
       "tagId": 8,
       "id": 9
+    },
+    {
+      "entryId": 6,
+      "tagId": 9,
+      "id": 10
+    },
+    {
+      "entryId": 6,
+      "tagId": 9,
+      "id": 11
+    },
+    {
+      "entryId": 6,
+      "tagId": 9,
+      "id": 12
+    },
+    {
+      "entryId": 6,
+      "tagId": 1,
+      "id": 13
+    },
+    {
+      "entryId": 6,
+      "tagId": 2,
+      "id": 14
     }
   ]
 }
