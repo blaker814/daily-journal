@@ -1,7 +1,7 @@
-import { saveJournalEntry, useJournalEntries } from "./JournalDataProvider.js"
+import { saveJournalEntry } from "./JournalDataProvider.js"
 import { useMoods, getMoods } from "./MoodProvider.js"
 import { useInstructors, getInstructors } from "./InstructorProvider.js"
-import { findTag, saveTag, saveEntryTag, determineTags } from "../filter/TagProvider.js"
+import { determineTags } from "../filter/TagProvider.js"
 
 const eventHub = document.querySelector("main")
 let tags;

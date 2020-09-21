@@ -192,6 +192,16 @@
       "entryId": 6,
       "tagId": 2,
       "id": 14
+    },
+    {
+      "entryId": 6,
+      "tagId": 1,
+      "id": 15
+    },
+    {
+      "entryId": 6,
+      "tagId": 2,
+      "id": 16
     }
   ]
 }

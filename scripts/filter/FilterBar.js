@@ -1,6 +1,5 @@
 import { MoodFilter } from "./MoodFilter.js"
 import { useMoods, getMoods } from "../form/MoodProvider.js"
-import { useJournalEntries } from "../form/JournalDataProvider.js"
 
 const eventHub = document.querySelector("main")
 const contentTarget = document.querySelector(".filters")
