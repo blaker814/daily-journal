@@ -21,11 +21,12 @@ export const JournalEntryComponent = (entry) => {
                 <p>${entry.date}</p>
                 <p>${entry.entry}</p>
                 <ul>${
-                    tags.map(tag => `<li>${tag.subject}</li>`).join("")
+                    tags.map(tag => `<li class="tag-${entry.id}">${tag.subject}</li>`).join("")
                 }
                 </ul>
                 <p>This was a ${entry.mood.label} entry.</p>
                 <p>${entry.instructor.first_name} ${entry.instructor.last_name} is so helpful!</p>
+                <button type="button" class="editBtn" id="editBtn-${entry.id}">Edit Entry</button>
                 <button type="button" class="deleteBtn" id="deleteBtn-${entry.id}">Delete Entry</button>
         </section>
     `

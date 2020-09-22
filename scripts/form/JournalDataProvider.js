@@ -41,3 +41,15 @@ export const deleteJournalEntry = entryObj => {
         .then(getJournalEntries) 
         .then(dispatchStateChangeEvent) 
 }
+
+export const updateJournalEntry = entryObj => {
+    fetch(`http://localhost:8088/entries/${entryObj.id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(entryObj)
+    })
+        .then(getJournalEntries) 
+        .then(dispatchStateChangeEvent) 
+}

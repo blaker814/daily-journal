@@ -1,12 +1,12 @@
 {
   "entries": [
     {
+      "id": 1,
       "date": "2020-08-10",
       "concept": "HTML & CSS",
       "entry": "We talked about HTML components and how to make grid layouts with Flexbox in CSS.",
       "moodId": 1,
-      "instructorId": 3,
-      "id": 1
+      "instructorId": 3
     },
     {
       "date": "2020-08-12",
@@ -17,7 +17,7 @@
       "id": 2
     },
     {
-      "date": "2020-8-19",
+      "date": "2020-08-19",
       "concept": "JS Objects",
       "entry": "We learned about JS objects and how to utilize them in creating material for our webpage",
       "moodId": 3,
@@ -41,12 +41,12 @@
       "id": 5
     },
     {
+      "id": 6,
       "date": "2020-09-17",
       "concept": "CRUD",
       "entry": "I have finally learned how to use every method of CRUD.",
       "moodId": 2,
-      "instructorId": 1,
-      "id": 6
+      "instructorId": 1
     }
   ],
   "moods": [
@@ -120,19 +120,21 @@
     {
       "subject": "ERD",
       "id": 9
+    },
+    {
+      "subject": "Love",
+      "id": 10
+    },
+    {
+      "subject": "Happy",
+      "id": 11
+    },
+    {
+      "subject": "peanuts",
+      "id": 12
     }
   ],
   "entryTags": [
-    {
-      "entryId": 1,
-      "tagId": 2,
-      "id": 1
-    },
-    {
-      "entryId": 2,
-      "tagId": 5,
-      "id": 2
-    },
     {
       "entryId": 3,
       "tagId": 3,
@@ -174,34 +176,9 @@
       "id": 10
     },
     {
-      "entryId": 6,
-      "tagId": 9,
+      "entryId": 1,
+      "tagId": 2,
       "id": 11
-    },
-    {
-      "entryId": 6,
-      "tagId": 9,
-      "id": 12
-    },
-    {
-      "entryId": 6,
-      "tagId": 1,
-      "id": 13
-    },
-    {
-      "entryId": 6,
-      "tagId": 2,
-      "id": 14
-    },
-    {
-      "entryId": 6,
-      "tagId": 1,
-      "id": 15
-    },
-    {
-      "entryId": 6,
-      "tagId": 2,
-      "id": 16
     }
   ]
 }
