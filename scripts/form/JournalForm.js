@@ -13,24 +13,21 @@ eventHub.addEventListener("journalStateChanged", event => {
         const entryTagsToBeDeleted = []
         entryTags.forEach(entryTag => {
             if (entryTag.entryId === parseInt(hiddenId))
-            entryTagsToBeDeleted.push(entryTag)
+                entryTagsToBeDeleted.push(entryTag)
         })
 
         if(entryTagsToBeDeleted.length > 0) {
             deleteEntryTags(entryTagsToBeDeleted)
-            determineTags(tags, parseInt(hiddenId))
-            tags = [];
-            hiddenId = "";
+                .then(() => {
+                    determineTags(tags, parseInt(hiddenId))
+                })
         } else {
             determineTags(tags, parseInt(hiddenId))
-            tags = [];
-            hiddenId = "";
         }
     } else if (tags !== [] && !hiddenId) {
         const allEntries = useJournalEntries()
         const entry = allEntries[allEntries.length-1]
         determineTags(tags, entry.id)
-        tags = [];
     }
 })
 
@@ -51,9 +48,11 @@ const determineTags = (tagArray, entryId) => {
                 const newTag = {
                     subject: tag
                 }
-                saveTag(entryId, newTag)
-            }
-            else {
+                saveTag(newTag)
+                    .then(newTagArray => {
+                        saveEntryTag(entryId, newTagArray[0].id)
+                    })
+            } else {
                 saveEntryTag(entryId, matchingTag)
             }
         })

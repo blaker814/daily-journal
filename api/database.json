@@ -9,43 +9,43 @@
       "instructorId": 3
     },
     {
+      "id": 2,
       "date": "2020-08-12",
       "concept": "GitHub",
       "entry": "We dove into GitHub and learned about it's functionality and work flow.",
       "moodId": 3,
-      "instructorId": 1,
-      "id": 2
+      "instructorId": 1
     },
     {
+      "id": 3,
       "date": "2020-08-19",
       "concept": "JS Objects",
       "entry": "We learned about JS objects and how to utilize them in creating material for our webpage",
       "moodId": 3,
-      "instructorId": 1,
-      "id": 3
+      "instructorId": 1
     },
     {
+      "id": 4,
       "date": "2020-09-02",
       "concept": "APIs",
       "entry": "I learned how to create and implement my own local APIs.",
       "moodId": 3,
-      "instructorId": 2,
-      "id": 4
+      "instructorId": 2
     },
     {
+      "id": 5,
       "date": "2020-09-04",
       "concept": "POST",
       "entry": "We learned about the C in the CRUD method",
       "moodId": 1,
-      "instructorId": 1,
-      "id": 5
+      "instructorId": 1
     },
     {
       "id": 6,
-      "date": "2020-09-17",
+      "date": "2020-09-18",
       "concept": "CRUD",
-      "entry": "I have finally learned how to use every method of CRUD.",
-      "moodId": 2,
+      "entry": "Can now implement each letter of CRUD",
+      "moodId": 3,
       "instructorId": 1
     }
   ],
@@ -86,99 +86,87 @@
   ],
   "tags": [
     {
-      "id": 1,
-      "subject": "API"
+      "subject": "API",
+      "id": 1
     },
     {
-      "id": 2,
-      "subject": "components"
-    },
-    {
-      "id": 3,
-      "subject": "fetch"
-    },
-    {
-      "subject": "PUT",
-      "id": 4
+      "subject": "components",
+      "id": 2
     },
     {
       "subject": "GitHub",
+      "id": 3
+    },
+    {
+      "subject": "objects",
+      "id": 4
+    },
+    {
+      "subject": "JSON",
       "id": 5
     },
     {
-      "subject": "DELETE",
+      "subject": "POST",
       "id": 6
     },
     {
-      "subject": "POST",
+      "subject": "PUT",
       "id": 7
     },
     {
-      "subject": "GET",
+      "subject": "DELETE",
       "id": 8
     },
     {
-      "subject": "ERD",
+      "subject": "GET",
       "id": 9
-    },
-    {
-      "subject": "Love",
-      "id": 10
-    },
-    {
-      "subject": "Happy",
-      "id": 11
-    },
-    {
-      "subject": "peanuts",
-      "id": 12
     }
   ],
   "entryTags": [
     {
-      "entryId": 3,
+      "entryId": 2,
       "tagId": 3,
       "id": 3
     },
     {
-      "entryId": 4,
-      "tagId": 5,
+      "entryId": 3,
+      "tagId": 4,
       "id": 4
     },
     {
       "entryId": 5,
-      "tagId": 4,
-      "id": 5
-    },
-    {
-      "entryId": 6,
-      "tagId": 4,
-      "id": 6
-    },
-    {
-      "entryId": 6,
       "tagId": 6,
       "id": 7
     },
     {
-      "entryId": 6,
-      "tagId": 7,
+      "entryId": 1,
+      "tagId": 2,
       "id": 8
     },
     {
       "entryId": 6,
-      "tagId": 8,
+      "tagId": 7,
       "id": 9
     },
     {
       "entryId": 6,
-      "tagId": 9,
+      "tagId": 6,
       "id": 10
     },
     {
-      "entryId": 1,
-      "tagId": 2,
+      "entryId": 6,
+      "tagId": 8,
       "id": 11
+    },
+    {
+      "entryId": 6,
+      "tagId": 9,
+      "id": 12
+    },
+    {
+      "entryId": 4,
+      "tagId": 1,
+      "id": 13
     }
   ]
 }

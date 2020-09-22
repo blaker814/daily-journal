@@ -1,5 +1,3 @@
-import { useJournalEntries } from "../form/JournalDataProvider.js"
-
 let tags = []
 let entryTags = []
 
@@ -19,8 +17,8 @@ export const findTag = (subject) => {
         .then(response => response.json())
 }
 
-export const saveTag = (entryId, tagObj) => {
-    fetch("http://localhost:8088/tags", {
+export const saveTag = (tagObj) => {
+    return fetch("http://localhost:8088/tags", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -28,11 +26,7 @@ export const saveTag = (entryId, tagObj) => {
         body: JSON.stringify(tagObj)
     })
     .then(getTags)
-    .then(() => {
-        const allTags = useTags()
-        const new_tag = allTags.find(tag => tag.subject === tagObj.subject)
-        saveEntryTag(entryId, new_tag.id)
-    })
+    .then(() => findTag(tagObj.subject))
 }
 
 export const useEntryTags = () => entryTags.slice()
@@ -51,7 +45,7 @@ export const saveEntryTag = (entryId, tagId) => {
         tagId: tagId
     }   
 
-    fetch("http://localhost:8088/entryTags", {
+    return fetch("http://localhost:8088/entryTags", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -61,9 +55,9 @@ export const saveEntryTag = (entryId, tagId) => {
 }
 
 export const deleteEntryTags = entryTagArray => {
-    entryTagArray.map(entryTag => {
+    return Promise.all(entryTagArray.map(entryTag => {
         fetch(`http://localhost:8088/entryTags/${entryTag.id}`, {
         method: "DELETE"
         })
-    })
+    }))
 }
