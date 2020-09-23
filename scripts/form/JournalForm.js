@@ -49,6 +49,7 @@ const determineTags = (tagArray, entryId) => {
                     subject: tag
                 }
                 saveTag(newTag)
+                    .then(() => findTag(newTag.subject))
                     .then(newTagArray => {
                         saveEntryTag(entryId, newTagArray[0].id)
                     })

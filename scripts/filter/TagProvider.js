@@ -26,7 +26,6 @@ export const saveTag = (tagObj) => {
         body: JSON.stringify(tagObj)
     })
     .then(getTags)
-    .then(() => findTag(tagObj.subject))
 }
 
 export const useEntryTags = () => entryTags.slice()
